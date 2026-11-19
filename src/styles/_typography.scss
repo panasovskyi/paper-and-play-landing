@@ -1,0 +1,23 @@
+@mixin eyebrow {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@mixin h1 {
+  font-family: var(--font-hand);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-h1);
+  color: var(--ink);
+}
+
+@mixin lead {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
+  color: var(--text-2);
+}

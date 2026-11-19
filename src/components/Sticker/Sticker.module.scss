@@ -1,0 +1,13 @@
+.sticker {
+  --sticker-tilt: -2deg;
+
+  display: inline-block;
+  padding: var(--space-1-25) var(--space-2-5);
+  font-size: var(--fs-note);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-ui);
+  color: var(--sticker-text);
+  background-color: var(--sticker);
+  border-radius: var(--radius-sm);
+  transform: rotate(var(--sticker-tilt));
+}

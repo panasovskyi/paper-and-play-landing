@@ -1,0 +1,247 @@
+@use '../../styles/mixins' as *;
+
+.visual {
+  --pad-right: var(--space-10);
+  --pad-bottom: 3.125rem;
+  --screen-tilt: -1.5deg;
+  --screen-grid: 12px;
+  --screen-pad-start: 2.125rem;
+  --topic-size: 2.375rem;
+  --topic-lh: 0.9;
+  --meta-size: 0.5rem;
+  --meta-tracking: 1px;
+  --meta-gap: 0.1875rem;
+  --brand-size: 0.625rem;
+  --game-height: 5.75rem;
+  --game-small-size: 0.6875rem;
+  --game-shadow: 2px 2px 0 var(--ink);
+  --sheet-width: 34%;
+  --sheet-tilt: 5deg;
+  --sheet-logo: 1rem;
+  --exercise-size: 0.75rem;
+  --num-size: 0.75rem;
+  --num-font-size: 0.4375rem;
+  --box-size: 1.625rem;
+  --box-radius: 3px;
+  --scramble-size: 0.6875rem;
+  --scramble-tracking: 2px;
+  --sticker-x: -8px;
+  --sticker-y: -6px;
+
+  position: relative;
+  padding: var(--space-2-5) var(--pad-right) var(--pad-bottom) 0;
+
+  @include mobile {
+    --pad-right: var(--space-5);
+    --pad-bottom: var(--space-10);
+    --sheet-width: 44%;
+  }
+}
+
+.screenCard {
+  padding: var(--space-2-5);
+  transform: rotate(var(--screen-tilt));
+}
+
+.screen {
+  container-type: inline-size;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3-5);
+  aspect-ratio: 16 / 9;
+  padding: var(--space-4) var(--space-4-5) var(--space-3-5)
+    var(--screen-pad-start);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: var(--screen-grid) var(--screen-grid);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: var(--space-6);
+    width: var(--border-width-thin);
+    background-color: var(--margin);
+  }
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.topic {
+  font-family: var(--font-hand);
+  font-size: var(--topic-size);
+  line-height: var(--topic-lh);
+  color: var(--ink);
+}
+
+.meta {
+  margin-top: var(--meta-gap);
+  font-size: var(--meta-size);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--meta-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+.brand {
+  font-family: var(--font-hand);
+  font-size: var(--brand-size);
+  white-space: nowrap;
+  color: var(--decor);
+}
+
+.games {
+  display: flex;
+  gap: var(--space-2-5);
+  margin-top: var(--space-1-5);
+}
+
+.game {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: var(--game-height);
+  font-family: var(--font-hand);
+  font-size: var(--fs-body);
+  color: var(--ink);
+  background-color: var(--card);
+  border: var(--border-width-thin) solid var(--ink);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--game-shadow);
+}
+
+$game-tilts: (
+  1: 1deg,
+  2: -1.5deg,
+  3: 1deg,
+  4: -1deg,
+);
+
+@each $position, $angle in $game-tilts {
+  .game:nth-child(4n + #{$position}) {
+    transform: rotate($angle);
+  }
+}
+
+@container (max-width: 21rem) {
+  .games {
+    gap: var(--space-1-5);
+  }
+
+  .game {
+    font-size: var(--game-small-size);
+  }
+
+  .brand {
+    display: none;
+  }
+}
+
+.sheet {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: var(--sheet-width);
+  aspect-ratio: 210 / 297;
+  padding: var(--space-3-5) var(--space-3) var(--space-2-5) var(--space-6);
+  background-color: var(--card);
+  border: var(--border-width-hair) solid var(--line);
+  box-shadow: var(--shadow-sheet);
+  transform: rotate(var(--sheet-tilt));
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: var(--space-4);
+    width: var(--border-width-hair);
+    background-color: var(--margin);
+  }
+}
+
+.sheetHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-25);
+  padding-bottom: var(--space-1-5);
+  border-bottom: var(--border-width-hair) dashed var(--line);
+}
+
+.sheetLogo {
+  flex: none;
+  width: var(--sheet-logo);
+  height: var(--sheet-logo);
+}
+
+.sheetTitle {
+  font-family: var(--font-hand);
+  font-size: var(--fs-body);
+  color: var(--ink);
+}
+
+.exercise {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-25);
+}
+
+.num {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--num-size);
+  height: var(--num-size);
+  font-size: var(--num-font-size);
+  font-weight: var(--fw-extrabold);
+  color: var(--on-ink);
+  background-color: var(--ink);
+  border-radius: 50%;
+}
+
+.exerciseTitle {
+  font-family: var(--font-hand);
+  font-size: var(--exercise-size);
+  color: var(--ink);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.box {
+  flex: none;
+  width: var(--box-size);
+  height: var(--box-size);
+  border: var(--border-width-hair) solid var(--line);
+  border-radius: var(--box-radius);
+}
+
+.scrambled {
+  font-family: var(--font-hand);
+  font-size: var(--scramble-size);
+  letter-spacing: var(--scramble-tracking);
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+.sticker {
+  position: absolute;
+  inset-block-start: var(--sticker-y);
+  inset-inline-start: var(--sticker-x);
+}

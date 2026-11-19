@@ -1,0 +1,74 @@
+@use '../../styles/mixins' as *;
+
+.hero {
+  --copy-basis: 32.5rem;
+  --visual-basis: 25rem;
+  --lead-max: 32.5rem;
+
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+  padding-top: var(--space-9);
+}
+
+.copy {
+  flex: 1 1 var(--copy-basis);
+  min-width: 0;
+}
+
+.eyebrow {
+  @include eyebrow;
+  display: block;
+}
+
+.title {
+  @include h1;
+  margin: var(--space-3) 0 var(--space-4-5);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.lead {
+  @include lead;
+  max-width: var(--lead-max);
+  margin: 0 0 var(--space-7);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3-5);
+}
+
+.perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2-5) var(--space-5-5);
+  margin: var(--space-6-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.perk {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-ui);
+  color: var(--ink);
+}
+
+.check {
+  --icon-size: var(--icon-sm);
+  color: var(--success);
+}
+
+.visualCol {
+  flex: 1 1 var(--visual-basis);
+  min-width: 0;
+}
