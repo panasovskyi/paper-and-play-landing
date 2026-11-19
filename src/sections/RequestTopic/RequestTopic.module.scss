@@ -1,0 +1,54 @@
+@use '../../styles/mixins' as *;
+
+.layout {
+  --intro-basis: 20rem;
+  --card-basis: 30rem;
+  --field-min: 12.5rem;
+  --done-height: 12.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-10);
+}
+
+.intro {
+  flex: 1 1 var(--intro-basis);
+  min-width: 0;
+}
+
+.lead {
+  @include lead;
+  margin: var(--space-3) 0 0;
+}
+
+.card {
+  flex: 1 1 var(--card-basis);
+  min-width: 0;
+  padding: var(--space-7);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--field-min), 1fr));
+  gap: var(--space-4);
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3-5);
+}
+
+.note {
+  @include note;
+}
+
+.done {
+  min-height: var(--done-height);
+}
