@@ -26,3 +26,30 @@ export function CheckIcon({ className }: IconProps) {
     </Icon>
   )
 }
+
+export function DownloadIcon({ className }: IconProps) {
+  return (
+    <Icon className={className}>
+      <path d="M12 3v12M7 10l5 5 5-5M4 19h16" />
+    </Icon>
+  )
+}
+
+export function ScreenIcon({ className }: IconProps) {
+  return (
+    <Icon className={className}>
+      <rect x="3" y="4" width="18" height="12" rx="1.5" />
+      <path d="M8 20h8M12 16v4" />
+    </Icon>
+  )
+}
+
+export function PrintIcon({ className }: IconProps) {
+  return (
+    <Icon className={className}>
+      <path d="M7 9V3h10v6" />
+      <rect x="3" y="9" width="18" height="8" rx="1.5" />
+      <path d="M7 14h10v7H7z" />
+    </Icon>
+  )
+}

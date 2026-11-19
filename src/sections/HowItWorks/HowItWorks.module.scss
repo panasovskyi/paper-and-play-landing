@@ -1,0 +1,46 @@
+@use '../../styles/mixins' as *;
+
+.steps {
+  --step-min: 16.25rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--step-min), 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  --icon-box: 3.25rem;
+
+  padding: var(--space-6-5);
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-box);
+  height: var(--icon-box);
+  color: var(--ink);
+  background-color: var(--tint);
+  border-radius: var(--radius-lg);
+}
+
+.icon {
+  --icon-size: var(--icon-md);
+}
+
+.title {
+  @include h3;
+  margin: var(--space-4) 0 var(--space-1-5);
+}
+
+.text {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
+  color: var(--text-2);
+}

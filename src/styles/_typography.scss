@@ -15,6 +15,22 @@
   color: var(--ink);
 }
 
+@mixin h2 {
+  font-family: var(--font-hand);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-heading);
+  color: var(--ink);
+}
+
+@mixin h3 {
+  font-family: var(--font-hand);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-h3);
+  color: var(--ink);
+}
+
 @mixin lead {
   font-size: var(--fs-lead);
   font-weight: var(--fw-semibold);

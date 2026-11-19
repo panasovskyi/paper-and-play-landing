@@ -20,7 +20,7 @@
 | `styles/` | `tokens.scss` — **усі** кольори, шрифти, відступи, радіуси, тіні; `_mixins.scss` — брейкпоінти й контейнер; `base.scss`, `fonts.scss` |
 | `config/` | id розділів (`sections.ts`), посилання меню й футера (`navigation.ts`), назва й рік (`site.ts`) |
 | `data/` | дані тем (`topics.ts`): назва, рівень, кількість слів, ігри. Числа в лендінг не зашиваємо, беремо звідси |
-| `components/` | багаторазові: `Button`, `Link`, `Brand`, `Logo`, `Card`, `Sticker`, `Icon` |
+| `components/` | багаторазові: `Button`, `Link`, `Brand`, `Logo`, `Card`, `Sticker`, `Icon`, `Section` (контейнер + відступ розділу), `SectionHeading` (мітка + H2) |
 | `layout/` | каркас сторінки: `Layout`, `Header`, `Footer` |
 | `sections/` | розділи лендінгу (Hero, How it works, …) — додаються по одному |
 

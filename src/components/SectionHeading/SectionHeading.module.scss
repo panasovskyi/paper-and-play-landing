@@ -1,0 +1,11 @@
+@use '../../styles/mixins' as *;
+
+.eyebrow {
+  @include eyebrow;
+  display: block;
+}
+
+.title {
+  @include h2;
+  margin: var(--space-2) 0 0;
+}
