@@ -4,3 +4,15 @@
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
 }
+
+.dashed {
+  background-color: var(--paper);
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.accent {
+  background-color: var(--cream);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-free);
+}

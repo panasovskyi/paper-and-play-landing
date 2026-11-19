@@ -23,7 +23,9 @@ export const MARKETPLACE_LINKS: readonly NavLink[] = [
   { label: 'Gumroad', href: '#' },
 ]
 
+export const PRIVACY_HREF = '#privacy'
+
 export const LEGAL_LINKS: readonly NavLink[] = [
-  { label: 'Privacy', href: '#privacy' },
+  { label: 'Privacy', href: PRIVACY_HREF },
   { label: 'Contact', href: anchor(SECTION.request) },
 ]

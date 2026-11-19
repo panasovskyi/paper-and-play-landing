@@ -2,7 +2,7 @@ import { Card } from '../../components/Card/Card'
 import { Logo } from '../../components/Logo/Logo'
 import { Sticker } from '../../components/Sticker/Sticker'
 import { SITE } from '../../config/site'
-import type { Topic } from '../../data/topics'
+import type { AvailableTopic } from '../../data/topics'
 import styles from './HeroVisual.module.scss'
 
 const SCRAMBLED_WORDS = [
@@ -13,7 +13,7 @@ const SCRAMBLED_WORDS = [
 ] as const
 
 interface HeroVisualProps {
-  topic: Topic
+  topic: AvailableTopic
 }
 
 export function HeroVisual({ topic }: HeroVisualProps) {

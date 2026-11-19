@@ -27,6 +27,15 @@ export function CheckIcon({ className }: IconProps) {
   )
 }
 
+export function MailIcon({ className }: IconProps) {
+  return (
+    <Icon className={className}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </Icon>
+  )
+}
+
 export function DownloadIcon({ className }: IconProps) {
   return (
     <Icon className={className}>

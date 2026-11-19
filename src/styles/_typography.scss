@@ -31,6 +31,21 @@
   color: var(--ink);
 }
 
+@mixin h4 {
+  font-family: var(--font-hand);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-h4);
+  color: var(--ink);
+}
+
+@mixin note {
+  font-size: var(--fs-note);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-note);
+  color: var(--muted);
+}
+
 @mixin lead {
   font-size: var(--fs-lead);
   font-weight: var(--fw-semibold);

@@ -3,7 +3,7 @@
 
   display: inline-block;
   padding: var(--space-1-25) var(--space-2-5);
-  font-size: var(--fs-note);
+  font-size: var(--sticker-size, var(--fs-note));
   font-weight: var(--fw-extrabold);
   line-height: var(--lh-ui);
   color: var(--sticker-text);
