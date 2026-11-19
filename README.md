@@ -3,7 +3,7 @@
 Лендінг для проєкту Paper & Play: тематичні пакети ігор і воркшитів для вчителів мов.
 Макет: [Paper & Play — Landing](https://claude.ai/artifact/K31o8jx4fG4Yf8okkHx5o6).
 
-Стек: Vite + React + TypeScript, SCSS-модулі, без бекенду.
+Стек: Vite + React + TypeScript, SCSS-модулі. Свого бекенду немає: форми шлють запит у serverless-функцію (адреса в `.env`, див. `.env.example`).
 
 ## Команди
 
@@ -20,9 +20,12 @@
 | `styles/` | `tokens.scss` — **усі** кольори, шрифти, відступи, радіуси, тіні; `_mixins.scss` — брейкпоінти й контейнер; `base.scss`, `fonts.scss` |
 | `config/` | id розділів (`sections.ts`), посилання меню й футера (`navigation.ts`), назва й рік (`site.ts`) |
 | `data/` | дані тем (`topics.ts`): назва, рівень, кількість слів, ігри. Числа в лендінг не зашиваємо, беремо звідси |
-| `components/` | багаторазові: `Button`, `Link`, `Brand`, `Logo`, `Card`, `Sticker`, `Icon`, `Section` (контейнер + відступ розділу), `SectionHeading` (мітка + H2) |
+| `components/` | багаторазові: `Button`, `Link`, `Brand`, `Logo`, `Card`, `Sticker`, `Icon`, `Section` (контейнер + відступ розділу), `SectionHeading` (мітка + H2), `Field` (поля форм), `Checkbox`, `FormSuccess` |
 | `layout/` | каркас сторінки: `Layout`, `Header`, `Footer` |
-| `sections/` | розділи лендінгу (Hero, How it works, …) — додаються по одному |
+| `sections/` | розділи лендінгу: Hero, HowItWorks, Topics, WhatsInside, FreePack, RequestTopic, Faq |
+| `api/` | `forms.ts`: відправка форм на `VITE_FORMS_ENDPOINT`. Без адреси в dev успіх імітується, у продакшн-збірці форма показує помилку |
+| `hooks/` | `useFormSubmit`: стани відправки (`idle`, `sending`, `sent`, `error`) |
+| `utils/` | `cx` (класи), `form` (валідація email, читання полів, фокус) |
 
 Кожен компонент — папка `Name/` з `Name.tsx` і `Name.module.scss`.
 
