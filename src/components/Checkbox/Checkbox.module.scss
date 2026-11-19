@@ -1,0 +1,20 @@
+.checkbox {
+  --box-size: 1.25rem;
+  --box-offset: 1px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2-5);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
+  color: var(--text-2);
+}
+
+.box {
+  flex: none;
+  width: var(--box-size);
+  height: var(--box-size);
+  margin: var(--box-offset) 0 0;
+  accent-color: var(--ink);
+}
