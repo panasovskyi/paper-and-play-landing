@@ -1,0 +1,44 @@
+@use '../../styles/mixins' as *;
+
+.header {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-5-5);
+}
+
+.home {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.nav {
+  @include below-nav {
+    display: none;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-ui);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+}

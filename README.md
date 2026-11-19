@@ -1,35 +1,36 @@
-# React + TypeScript + Vite
+# Paper & Play — лендінг
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Лендінг для проєкту Paper & Play: тематичні пакети ігор і воркшитів для вчителів мов.
+Макет: [Paper & Play — Landing](https://claude.ai/artifact/K31o8jx4fG4Yf8okkHx5o6).
 
-Currently, two official plugins are available:
+Стек: Vite + React + TypeScript, SCSS-модулі, без бекенду.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Команди
 
-## React Compiler
+| | |
+|---|---|
+| `npm run dev` | dev-сервер |
+| `npm run build` | перевірка типів + збірка в `dist/` |
+| `npm run lint` | oxlint |
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Структура `src/`
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+| Папка | Що |
+|---|---|
+| `styles/` | `tokens.scss` — **усі** кольори, шрифти, відступи, радіуси, тіні; `_mixins.scss` — брейкпоінти й контейнер; `base.scss`, `fonts.scss` |
+| `config/` | id розділів (`sections.ts`), посилання меню й футера (`navigation.ts`), назва й рік (`site.ts`) |
+| `components/` | багаторазові: `Button`, `Link`, `Brand`, `Logo` |
+| `layout/` | каркас сторінки: `Layout`, `Header`, `Footer` |
+| `sections/` | розділи лендінгу (Hero, How it works, …) — додаються по одному |
 
-## Expanding the Oxlint configuration
+Кожен компонент — папка `Name/` з `Name.tsx` і `Name.module.scss`.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Правила стилів
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- **Лише змінні.** У модулях компонентів тільки `var(--token)`: жодних кольорів, розмірів у px і тіней прямо в коді. Нове значення спершу додаємо в `styles/tokens.scss`.
+- **Назви токенів** збігаються з блоком «CSS-змінні для нового проєкту» на артборді макета.
+- **Відступи** — шкала `--space-N`, де `N = px / 4` (`--space-2-5` = 10 px).
+- **Розміри тексту** в rem (1rem = 16 px): значення з макета в px = rem × 16.
+- **Телефон.** Мобільні значення перевизначені в `tokens.scss` (блок `@include mobile`), тож у компонентах media-запити майже не потрібні. Брейкпоінти живуть лише в `_mixins.scss`.
+- **Шрифти** хостяться локально (`assets/fonts/`, ліцензії OFL поруч): без Google Fonts.
+- Id розділів і якорі — тільки через `config/sections.ts`.

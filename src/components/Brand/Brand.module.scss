@@ -1,0 +1,29 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  font-family: var(--font-hand);
+  line-height: var(--lh-ui);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.lg {
+  --mark-size: var(--logo-size);
+  font-size: var(--fs-brand);
+}
+
+.sm {
+  --mark-size: var(--logo-size-sm);
+  font-size: var(--fs-brand-sm);
+}
+
+.mark {
+  flex: none;
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.amp {
+  color: var(--accent);
+}

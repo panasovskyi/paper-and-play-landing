@@ -1,0 +1,26 @@
+.frame {
+  fill: var(--card);
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.rule {
+  stroke: var(--card-rule);
+  stroke-width: 2;
+}
+
+.margin {
+  stroke: var(--margin);
+  stroke-width: 3;
+}
+
+.text {
+  fill: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 46px;
+  letter-spacing: -1px;
+}
+
+.amp {
+  fill: var(--accent);
+}
