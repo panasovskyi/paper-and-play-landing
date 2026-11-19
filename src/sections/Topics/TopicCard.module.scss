@@ -1,0 +1,55 @@
+@use '../../styles/mixins' as *;
+
+.card {
+  --topic-pad: var(--space-5);
+
+  padding: var(--topic-pad);
+
+  @include mobile {
+    --topic-pad: var(--space-3);
+    --sticker-size: 0.6875rem;
+  }
+}
+
+.picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-extrabold);
+  color: var(--decor);
+  background-color: var(--card);
+  border: var(--border-width-thin) solid var(--line);
+  border-radius: var(--radius);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-2);
+  margin-top: var(--space-3-5);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: var(--fs-topic);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-h3);
+  color: var(--ink);
+}
+
+.soon {
+  font-size: var(--fs-note);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-ui);
+  color: var(--muted);
+}
+
+.meta {
+  @include note;
+  margin: var(--space-1) 0 0;
+}

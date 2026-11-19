@@ -1,0 +1,17 @@
+@use '../../styles/mixins' as *;
+
+.grid {
+  --topic-min: 13.75rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--topic-min), 1fr));
+  gap: var(--space-5-5);
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+
+  @include mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3-5);
+  }
+}
