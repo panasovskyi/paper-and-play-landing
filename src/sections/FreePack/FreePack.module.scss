@@ -1,0 +1,51 @@
+@use '../../styles/mixins' as *;
+
+.card {
+  --intro-basis: 21.25rem;
+  --panel-basis: 23.75rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-9);
+  padding: var(--space-10);
+}
+
+.intro {
+  flex: 1 1 var(--intro-basis);
+  min-width: 0;
+}
+
+.title {
+  @include h2;
+  margin: var(--space-3) 0 0;
+}
+
+.lead {
+  @include lead;
+  margin: var(--space-3) 0 0;
+}
+
+.panel {
+  flex: 1 1 var(--panel-basis);
+  min-width: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3-5);
+}
+
+.submit {
+  align-self: flex-start;
+}
+
+.icon {
+  --icon-size: var(--icon-btn);
+}
+
+.note {
+  @include note;
+  margin: 0;
+}
