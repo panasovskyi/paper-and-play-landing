@@ -1,0 +1,27 @@
+.list {
+  --list-max: 51.25rem;
+
+  max-width: var(--list-max);
+  margin-top: var(--space-5);
+}
+
+.item {
+  padding: var(--space-4-5) 0;
+  border-top: var(--border-width) solid var(--line);
+}
+
+.question {
+  font-family: var(--font-hand);
+  font-size: var(--fs-question);
+  line-height: var(--lh-ui);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.answer {
+  margin: var(--space-2-5) 0 0;
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
+  color: var(--text-2);
+}
